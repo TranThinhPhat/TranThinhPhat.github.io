@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TahpMusic</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  </head>
+  
+  <style>
+*{
+  padding: 0;
+  margin: 0;
+}
+
+ul{
+  list-style-type: none;
+}
+
+#toggle{
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+
+body {
+  background: #ccc;
+  margin: 30px 50px;
+  line-height: 1.4;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  background: var(--dark);
+  color: var(--light);
+}
+
+/* Top Container */
+.top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'showcase showcase top-box-a'
+    'showcase showcase top-box-b';
+}
+
+.title{
+  text-align: center;
+  font-size: 2rem;
+}
+
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background: url("https://phunugioi.com/wp-content/uploads/2020/08/hinh-nen-dong-dep-1.gif");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.showcase h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+
+.boxes {
+  padding-top: 15px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1rem 1rem;
+  box-shadow: var(--shadow);
+}
+
+footer {
+  margin-top: 2rem;
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      'showcase showcase'
+      'top-box-a top-box-b';
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .top-container {
+    grid-template-areas:
+      'showcase'
+      'top-box-a'
+      'top-box-b';
+  }
+  #menu-nav{
+    flex-direction: column;
+    text-align: center;
+  }
+  #toggle{
+    display: block;
+  }
+  nav{
+    display: none;
+  }
+}
+  </style>
+  
+  <body>
+    <script>
+      $(document).ready(function(){
+        $('#toggle').click(function(){
+          $('nav').slideToggle();
+        });
+      })
+    </script>
+    <div class="wrapper">
+        <div id="toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="#nhactre">Nhạc trẻ</a></li>
+            <li><a href="#Rap">Rap</a></li>
+            <li><a href="#remix">Remix</a></li>
+            <li><a href="#thieunhi">Thiếu nhi</a></li>
+          </ul>
+        </nav>
+      <section class="top-container">
+        <header class="showcase">
+          <h1>
+            Chào mừng bạn đến với trang nghe nhạc của tôi.
+          </h1>
+          <p>
+            Hãy cùng tôi trải nghiệm nào 
+          </p>
+          <a href="#" class="btn">Tới ngay</a>
+        </header>
+      </section>
+      <div id="nhactre">
+      <p class="title">
+        - Nhạc Trẻ:
+      </p>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/v2luYYn_aAQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Cầu Vòng Khuyết
+          </h3>
+          <p>Tuấn Hưng</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/iLSLEoZKaxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Tiểu Thuyết Tình Yêu
+          </h3>
+          <p>Tăng Phúc</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/ECxVfrwwTp0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Gác Lại Âu Lo
+          </h3>
+          <p>Miu Lê ft Da LAB</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/OuNo8Tkb3lI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Đường Tôi Chở Em Về
+          </h3>
+          <p>buitruonglinh</p>
+        </div> 
+      </section>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/42Uvxt7i5dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Yêu Lại Từ Đầu
+          </h3>
+          <p>Khắc Việt</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/GSGQSSaj0KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Buồn Nốt Hôm Nay
+          </h3>
+          <p>Tăng Duy Tân</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/ci9GSE9iEso" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Cô Gái M52
+          </h3>
+          <p>HuyR ft Tùng Viu</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/KhTCatAKVpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Đã Lỡ Yêu Em Nhiều
+          </h3>
+          <p>JustaTee</p>
+        </div> 
+      </section>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/Zzn9-ATB9aU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Nàng Thơ
+          </h3>
+          <p>Hoàng Dũng</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/e2Xx7WcvEns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Bông Hoa đẹp Nhất
+          </h3>
+          <p>Trung Quân A.P</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/y_6aSG2yfe8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Hoa Nở Không Màu
+          </h3>
+          <p>Hoài Lâm</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/kV3famkRaA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Tâm Sự Tuổi 30
+          </h3>
+          <p>Trịnh Thăng Bình</p>
+        </div>
+      </section>
+      </div>
+      <div id="Rap">
+      <p class="title">
+        - Rap:
+      </p>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/5vBp9OPkIrE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Lạc
+          </h3>
+          <p>Rhymastic</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/uO1dO0CMkIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Short Skirt
+          </h3>
+          <p>NIZ x Trần Huyền Diệp</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/zubxCn9MekQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Hết Nhạc Con Về
+          </h3>
+          <p>RZ Mas</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/BBRCKcGPmhI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Mình Cưới Nhau Đi
+          </h3>
+          <p>Huỳnh James x Pjnboys</p>
+        </div>
+        </section>
+        <section class="boxes">
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/Xm7k9573ENc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Lung Linh
+          </h3>
+          <p>GUA ft Trangc</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/Q5Klr0Mu-ls" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            2 5
+          </h3>
+          <p>Táo</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/AqknwC4Wxn8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Baby Em Có Muốn Được High
+          </h3>
+          <p>NIZ x KOO</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/kFJd7U7vQ3o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Gái Độc Thân
+          </h3>
+          <p>tlinh</p>
+        </div>
+        </section>
+        <section class="boxes">
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/ut_3389rJh0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Muốn Nói Với Em
+          </h3>
+          <p>BlackBi - Mai Xuân Thứ</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/5h73etK3MJg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Em Là Người Tốt
+          </h3>
+          <p>DT</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/OjTUv0vK4x8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Xe Đạp
+          </h3>
+          <p>BabyRed</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/VqRkSBIa1Hw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Đêm Tàn
+          </h3>
+          <p>Wowy</p>
+        </div>
+        </section>
+      </div>
+      <div id="remix">
+      <p class="title">
+        - Remix:
+      </p>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/IiVC7omXhUQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Yêu Đừng Sợ Đau (Remix)
+          </h3>
+          <p>Ngô Lan Hương</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/rEl9BMIsNPM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Như Gió Với Mây (Remix)
+          </h3>
+          <p>Đinh Đại Vũ</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/1YHNyz7Wjgc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Thay Tôi Yêu Cô Ấy (Remix)
+          </h3>
+          <p>Thanh Hưng</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/bzrAShhJoz0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Đau để Trưởng Thành (Remix)
+          </h3>
+          <p>Only C</p>
+        </div>
+        </section>
+        <section class="boxes">
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/E4uSPqpq0IA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Khó Vẽ Nụ Cười (Remix)
+          </h3>
+          <p>ĐạtG - DuUyên</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/s8AimmlCN0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Trú Mưa (Remix - TikTok)
+          </h3>
+          <p>Umie x Teddy x $mile x meChill</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/oo62Q0SoR6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Hạ Còn Vương Nắng (Remix)
+          </h3>
+          <p>ĐạtKa x KIDO</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/tjGJjFE0fxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Cô Đơn Dành Cho Ai (Remix)
+          </h3>
+          <p>Nal x Lee Ken</p>
+        </div>
+        </section>
+        <section class="boxes">
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/i5ceYvDIcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Thê Lương (Remix)
+          </h3>
+          <p>Phúc Chinh</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/tjGJjFE0fxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Cô Đơn Dành Cho Ai (Remix)
+          </h3>
+          <p>Nal x Lee Ken</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/I6CZiR3UheI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Chỉ Bằng Cái Gật Đầu (Remix)
+          </h3>
+          <p>Yan Nguyễn</p>
+        </div>
+          <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/5c8t32Cdgyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Nơi Này Có Anh (Remix)
+          </h3>
+          <p>Sơn Tùng M-TP</p>
+        </div>
+        </section>
+      </div>
+      <div id="thieunhi">
+      <p class="title">
+        - Nhạc Thiếu Nhi:
+      </p>
+      <section class="boxes">
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/tnj17sXKW5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            Baby Shark
+          </h3>
+          <p>Pinkfong Baby Shark</p>
+        </div>
+        <div class="box">
+          <iframe width="290" height="200" src="https://www.youtube.com/embed/281dyp46viw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <h3>
+            To Tò Te
+          </h3>
+          <p>Cô Ba Vàng Ngọc</p>
+        </div>
+        </section>
+      </div>
+      
+      <footer>
+        <p>
+          Mọi thắc mắc liên hệ:<br/>
+          Facebook: <a href="https://www.facebook.com/profile.php?id=100040147838900"target=_"blank">Phát Phê Pha</a><br/>
+          Gmail: phatcuteee@gmail.com<br/>
+          Một Bản Quyền Của Phátcuteee
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
